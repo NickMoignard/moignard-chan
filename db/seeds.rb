@@ -11,6 +11,17 @@ end
         :password => "my_name_is_jeff",
         :password_confirmation => "my_name_is_jeff"    
     })
-    # user.skip_confirmation!
+    user.skip_confirmation!
     user.save!
+
+    forum = Forum.first
+
+    post = Post.new({
+        :user_id => user.id,
+        :forum_id => forum.id,
+        :title => Faker::Lorem.sentence,
+        :body => Faker::Lorem.paragraph
+    })
+    post.save!
 end
+

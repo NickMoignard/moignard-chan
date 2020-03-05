@@ -11,6 +11,7 @@ class ForumsController < ApplicationController
   # GET /forums/1
   # GET /forums/1.json
   def show
+    @posts = @forum.posts.page params[:page]
   end
 
   # GET /forums/new

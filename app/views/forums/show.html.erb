@@ -1,14 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @forum.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @forum.description %>
-</p>
+
+<div id="header w-100">
+  <div class="cover-image">
+    <%= image_tag("cover.jpg", :alt => "cover image") %>
+  </div>
+  <div class="forum-header m-2">
+  <p><strong>Title:</strong><%= @forum.title %></p>
+  <p><strong>Description:</strong><%= @forum.description %></p>
+  </div>
+</div>
+
+
+
+</div>
+<div class="container">
+  <div class="row">
+    <div id="content" class="col-8" >
+      <% @posts.each do |p| %>
+        <div class="card p-3 mb-2" style="">
+          <p><strong>post:</strong><%= p.title %></p>
+          <p><strong>body:</strong><%= p.body %></p>
+          <div class="mt-2"><%= commontator_thread(p) %></div>
+        </div>
+      <% end %>  
+    </div>
+    <div class="col-4">
+      <div class="card p-3 ">
+        <h3><%= @forum.title %></h3>
+        <p><%= @forum.description %></p>
+      </div>  
+    </div>
+  </div>
+  <%= paginate @posts %>
+</div>
+
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>

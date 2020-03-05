@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user, only: [:new, :edit, :create, :destroy]
   # GET /posts
   # GET /posts.json
   def index
