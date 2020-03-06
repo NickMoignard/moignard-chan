@@ -1,6 +1,6 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :create, :new, :destroy]
+  before_action :authenticate_user!, only: [ :edit, :update, :create, :new, :destroy]
   before_action :set_post, only: [:upvote, :downvote]
   # before_action :logged_in?, only: [:edit, :update, :destroy, :new, :create]
   # GET /forums
