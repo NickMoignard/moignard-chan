@@ -22,6 +22,18 @@
         <div class="card p-3 mb-2" style="">
           <p><strong>post:</strong><%= p.title %></p>
           <p><strong>body:</strong><%= p.body %></p>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <%= link_to like_post_path(p.id),:class => "nav-link", :id => "like_#{p.id}", :method => :put,:remote => true  do %>
+                <%= fa_icon 'thumbs-up' %>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to dislike_post_path(p.id), :class => "nav-link", :id => "unlike_#{p.id}", :method => :put,:remote => true do %>
+                <%= fa_icon 'thumbs-down' %>
+              <% end %>
+            </li>
+          </ul>
           <div class="mt-2"><%= commontator_thread(p) %></div>
         </div>
       <% end %>  
