@@ -19,7 +19,26 @@
 
 body {
     margin:0;
+ 
 }
+
 p {
     margin:0;
+}
+
+.Mchan-bg {
+    background:#ffe image-url('fade.png') top repeat-x;
+    color:#800;
+}
+
+.card {
+    border-radius: 0;
+    border-color: #800;    
+}
+
+.navbar-brand {
+    color: #800;
+}
+nav .btn-group *{
+    color: #800;
 }

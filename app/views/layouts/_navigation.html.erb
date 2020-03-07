@@ -1,17 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Devise Login w/Modal Demo</a>
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#"><%= fa_icon 'globe' %>Mchan</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
     </ul>
-    <span class="navbar-text">
+    <div class="btn-group" >
+      <%= link_to 'Sign up', new_user_registration_path, :class => "btn" %>
+    
       <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+        <%= link_to "Logout", destroy_user_session_path, :class => "btn", method: :delete  %>
       <% else %>
-        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Login", "", :class => "btn",data: {toggle: "modal", target: ".bd-example-modal-lg"} %>
       <% end %>
-    </span>
+    </div>
   </div>
 </nav>
+<%= render 'layouts/alerts' %>
+<%= render 'layouts/sign_in_form'%>

@@ -1,59 +1,55 @@
-<p id="notice"><%= notice %></p>
-
-
-
 <div id="header w-100">
   <div class="cover-image">
     <%= image_tag("cover.jpg", :alt => "cover image") %>
   </div>
   <div class="forum-header m-2">
-  <p><strong>Title:</strong><%= @forum.title %></p>
-  <p><strong>Description:</strong><%= @forum.description %></p>
+    <%= image_tag("default_forum_dp.png",:alt => "forum dp", :id => "forum-dp")%>
+    <h3 id="forum-title"><%= @forum.title %></h3>
   </div>
 </div>
 
 
-
-</div>
-<div class="container">
-  <div class="row">
-    <div id="content" class="col-8" >
-      <% @posts.each do |p| %>
-        <div class="card p-3 mb-2" style="">
-          <p><strong>post:</strong><%= p.title %></p>
-          <p><strong>body:</strong><%= p.body %></p>
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <%= link_to like_post_path(p.id),:class => "nav-link", :id => "like_#{p.id}", :method => :put,:remote => true  do %>
-                <%= fa_icon 'thumbs-up' %>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to dislike_post_path(p.id), :class => "nav-link", :id => "unlike_#{p.id}", :method => :put,:remote => true do %>
-                <%= fa_icon 'thumbs-down' %>
-              <% end %>
-            </li>
-          </ul>
-          <div class="mt-2"><%= commontator_thread(p) %></div>
-        </div>
-      <% end %>  
+<div class="Mchan-bg">
+  <div class="container">
+    <div class="row">
+      <div id="content" class="py-2 col-8" >
+        <% @posts.each do |p| %>
+          <div class="card p-3 mb-2" style="">
+            <p><strong>post:</strong><%= p.title %></p>
+            <p><strong>body:</strong><%= p.body %></p>
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <%= link_to like_post_path(p.id),:class => "nav-link", :id => "like_#{p.id}", :method => :put,:remote => true  do %>
+                  <%= fa_icon 'thumbs-up' %>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to dislike_post_path(p.id), :class => "nav-link", :id => "unlike_#{p.id}", :method => :put,:remote => true do %>
+                  <%= fa_icon 'thumbs-down' %>
+                <% end %>
+              </li>
+            </ul>
+            <div class="mt-2"><%= commontator_thread(p) %></div>
+          </div>
+        <% end %>  
+      </div>
+      <div class="col-4 py-2">
+        <div class="card p-3 ">
+          <h3><%= @forum.title %></h3>
+          <p><%= @forum.description %></p>
+        </div>  
+      </div>
     </div>
-    <div class="col-4">
-      <div class="card p-3 ">
-        <h3><%= @forum.title %></h3>
-        <p><%= @forum.description %></p>
-      </div>  
-    </div>
+    <%= paginate @posts %>
   </div>
-  <%= paginate @posts %>
+
+
+
+
+
+
+
+
+  <%= link_to 'Edit', edit_forum_path(@forum) %> |
+  <%= link_to 'Back', forums_path %>
 </div>
-
-
-
-
-
-
-
-
-<%= link_to 'Edit', edit_forum_path(@forum) %> |
-<%= link_to 'Back', forums_path %>

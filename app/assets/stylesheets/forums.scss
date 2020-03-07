@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .cover-image {
-    max-height: 5rem;
+    max-height: 15rem;
     overflow: hidden;
     width:100%;
     img {
@@ -14,3 +14,23 @@
     max-height: 5rem;
     border-top: 2px solid white;
 }
+#forum-dp {
+    height: 15vh;
+    width: 15vh;
+    border-radius: 100px;
+    border: solid
+    white 5px;
+    position: relative;
+    top: -20pt;
+    left: 50px;
+}
+#forum-title {
+    display: inline-block;
+    padding: 0 0 0 10pt;
+    position: relative;
+    left: 40px;
+    top: -30px;
+    font-weight: bold;
+    color:#800;
+}
+
