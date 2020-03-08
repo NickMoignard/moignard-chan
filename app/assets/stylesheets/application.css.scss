@@ -16,10 +16,14 @@
  */
 
 @import "font-awesome";
+@import "vars";
 
+
+#modal-form {
+    margin: 2rem;
+}
 body {
     margin:0;
- 
 }
 
 p {
@@ -44,8 +48,56 @@ a:hover {
 }
 
 .navbar-brand {
-    color: #800;
+    color: $brown;
 }
 nav .btn-group *{
-    color: #800;
+    color: $brown;
+}
+
+
+#modal-checkbox {
+    padding: 11px;
+    border: solid 1px $brown;
+    background-color: #FFF;
+}
+.modal-content {
+    border: solid 1px $brown;
+    border-radius: 0;
+    background: lightsalmon;
+    max-width: 50%;
+    margin: 0 auto;
+    * {
+        color: black;
+        opacity: 1 !important;
+    }
+    input {
+        border-radius: 0;
+        border: solid 1px $brown;
+    }
+    #user_email, #user_password {
+        margin: 0 0 10px 0;
+    }
+
+}
+div.modal:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(2) > span:nth-child(1) {
+    padding:3px;
+}
+
+div.modal:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(2) > span:nth-child(1):hover {
+    color: red;
+}
+.modal-header {
+    border-bottom: solid 1px $brown;
+    background-color: $alt-bg-color;
+    padding: 5px 10px 5px 13px;
+}
+.modal-header .close {
+
+    padding: 3px;
+    margin: 0;
+
+}
+
+nav.navbar {
+    border-bottom: solid 1px $brown;
 }
