@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post.liked_by current_user
+    @post.liked_by current_user, :vote_weight => ( Math.log(current_user.current_streak_length_for_forum(@post.forum_id) + 1) + 1)
     respond_to do |f|
       f.html { redirect_to :back }
       f.js
@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   end    
 
   def downvote
-    @post.downvote_from current_user
+    @post.downvote_from current_user, :vote_weight => ( Math.log(current_user.current_streak_length_for_forum(@post.forum_id) + 1) + 1)
     respond_to do |f|
       f.html { redirect_to :back }
       f.js
