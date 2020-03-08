@@ -15,6 +15,7 @@
       <div id="content" class="py-2 col-8" >
         <% @posts.each do |p| %>
           <div class="card p-3 mb-2" style="">
+            <h1><%= p.cached_votes_score %></h1>
             <p><strong>post:</strong><%= p.title %></p>
             <p><strong>body:</strong><%= p.body %></p>
             <ul class="nav nav-pills">

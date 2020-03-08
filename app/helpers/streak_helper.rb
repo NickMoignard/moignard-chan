@@ -1,4 +1,0 @@
-module StreakHelper
-
-    
-end
