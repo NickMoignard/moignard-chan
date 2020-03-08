@@ -13,8 +13,8 @@
 
 <div id="commontator-thread-<%= thread.id %>-show" class="show commontator-hidden">
   <%= link_to t('commontator.thread.actions.show'),
-              '#',
-              id: "commontator-thread-#{thread.id}-show-link" %>
+              '',
+              id: "commontator-thread-#{thread.id}-show-link", :remote => true %>
 </div>
 
 <div id="commontator-thread-<%= thread.id %>-content" class="content">
@@ -22,8 +22,8 @@
     <span id="commontator-thread-<%= thread.id %>-actions" class="actions">
       <span id="commontator-thread-<%= thread.id %>-hide" class="hide commontator-hidden">
         <%= link_to t('commontator.thread.actions.hide'),
-                    '#',
-                    id: "commontator-thread-#{thread.id}-hide-link" %>
+                    '',
+                    id: "commontator-thread-#{thread.id}-hide-link", :remote => true %>
       </span>
 
       <% if can_subscribe %>

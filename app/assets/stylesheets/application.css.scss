@@ -26,6 +26,13 @@ p {
     margin:0;
 }
 
+a {
+    color: #800 !important;
+}
+a:hover {
+    color: red !important;
+}
+
 .Mchan-bg {
     background:#ffe image-url('fade.png') top repeat-x;
     color:#800;
