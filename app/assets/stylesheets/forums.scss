@@ -2,26 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import "vars";
+
 .cover-image {
-    max-height: 15rem;
+    max-height: 10rem;
     overflow: hidden;
     width:100%;
+    border-bottom: 1px solid $brown;
     img {
         width:100vw;
     }
 }
 .forum-header {
     max-height: 5rem;
-    border-top: 2px solid white;
+    border-bottom: 1px solid $brown;
 }
 #forum-dp {
     height: 15vh;
     width: 15vh;
-    border-radius: 100px;
     border: solid
-    white 5px;
+    $brown 1px;
     position: relative;
-    top: -20pt;
+    top: -50pt;
     left: 50px;
 }
 #forum-title {
