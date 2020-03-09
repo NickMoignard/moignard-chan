@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+class Post < ActiveRecord::Base
   belongs_to :forum
   belongs_to :user
 

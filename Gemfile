@@ -33,6 +33,7 @@ gem 'acts_as_votable'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'streakable'
+gem 'friendly_id'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

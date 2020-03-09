@@ -1,7 +1,7 @@
 class CreateForums < ActiveRecord::Migration[6.0]
   def change
     create_table :forums do |t|
-      t.string :title
+      t.string :title, :unique => true
       t.text :description
 
       t.timestamps
